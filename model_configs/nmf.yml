@@ -1,0 +1,15 @@
+backend: sklearn
+random_seed: 42
+model:
+  name: src.models.nmf.NMF
+  beta_loss: kullback-leibler
+dataset:
+  name: MIR_1K
+  seconds: 8.192
+  size: 50
+  num_components: 16
+  test_size: 0.5
+train:
+  eval: [test]
+test:
+  metrics: [gnsdr]
